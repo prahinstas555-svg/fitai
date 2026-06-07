@@ -131,7 +131,7 @@ if page == "🏠 Главная":
 
     if st.button("✦ Получить персональный план ✦"):
         with st.spinner("🤖 Создаём твой эксклюзивный план..."):
-            client = Groq(api_key=API_KEY)
+            client = Groq(api_key=st.secrets["GROQ_API_KEY"])
             prompt = f"""Ты элитный персональный тренер премиум-класса.
 Составь план для клиента:
 - Цель: {goal}
