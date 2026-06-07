@@ -181,7 +181,7 @@ elif page == "💬 Чат с тренером":
         # ИИ отвечает
         with st.chat_message("assistant", avatar="💪"):
             with st.spinner("Думаю..."):
-                client = Groq(api_key=API_KEY)
+                api_key=st.secrets["GROQ_API_KEY"]
                 response = client.chat.completions.create(
                     messages=[
                         {"role": "system", "content": "Ты опытный персональный фитнес-тренер. Отвечай дружелюбно, по делу, с эмодзи. Давай практичные советы про тренировки, питание и мотивацию."},
